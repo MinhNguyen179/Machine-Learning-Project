@@ -60,7 +60,7 @@ def main():
     X_train, X_test, y_train, y_test = load_and_preprocess_data()
     train_loader, test_loader = create_dataloader(X_train, X_test, y_train, y_test)
 
-    model = torch.nn.Sequential(torch.nn.Linear(10, 2))
+    model = torch.load("model.pt")
 
     mia_attack = MIA(model)
 
