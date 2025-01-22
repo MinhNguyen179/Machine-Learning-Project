@@ -7,6 +7,7 @@ from dataset_preparation import prepare_dataset
 # Load configuration
 from config import FineTuneConfig
 
+
 def fine_tune_lora():
     model = AutoModelForCausalLM.from_pretrained(FineTuneConfig.base_model_path)
     tokenizer = AutoTokenizer.from_pretrained(FineTuneConfig.base_model_path)
