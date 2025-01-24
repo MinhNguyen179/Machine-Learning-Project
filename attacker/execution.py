@@ -9,7 +9,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments,
 
 
 
-model = AutoModelForCausalLM.from_pretrained(FineTuneConfig.base_model_path)
+model = AutoModelForCausalLM.from_pretrained('E:\Machine-Learning-Project\outputs\sujet117k-llama2-7b-dp')
 tokenizer = AutoTokenizer.from_pretrained(FineTuneConfig.base_model_path)
 dataset = prepare_dataset(FineTuneConfig.dataset_path, tokenizer)
 train_dataset, val_dataset = prepare_dataset(FineTuneConfig.dataset_path, tokenizer)
@@ -48,7 +48,7 @@ dataset = DatasetDict({
 
 # Initialize the manager and execute the attack
 attack_manager = AttackManager(
-    model=Config.model_path,
+    model=model,
     dataset=dataset,
     attack_type="likelihood",  # Choose from 'likelihood', 'lira', 'neighborhood'
     config=Config

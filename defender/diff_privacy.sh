@@ -1,0 +1,1 @@
+python defender/lm_pbe/efenses/DP/fine_tune.py --config_path=/llm_pbe/defenses/DP/onfig/17k-llama2-7b-dp.yml
